@@ -1,6 +1,4 @@
-
 -- Server version:               5.5.32 - MySQL Community Server (GPL)
--- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET NAMES utf8mb4 */;
