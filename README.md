@@ -16,6 +16,6 @@ If you would like to contribute please feel free to email me or make the request
 ## Requirements:
 Requirements so far:
 
-Windows Machine | PowerShell 4.0 | MySql "Community" 5.5.32 | MySql Connector 6.9.6
+Windows Machine | PowerShell 4.0 | MySql "Community" 5.5.32 | MySql  Net Connector 6.9.6
 
 
