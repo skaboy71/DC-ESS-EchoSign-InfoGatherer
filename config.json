@@ -1,0 +1,11 @@
+{
+    "sqlServer": "1.1.1.1",
+    
+    "dbname": "dc_ess_data",
+
+    "dbuser": "dbuser",
+    
+    "dbpass": "dbpassword",
+
+    "apiKey": "askdfjhalkdsjhf*******  YOUR INTGERATION KEY HERE *******  'dlw;kv';alvk';ldvk'qedkvm'adl;mvkkk"
+}
