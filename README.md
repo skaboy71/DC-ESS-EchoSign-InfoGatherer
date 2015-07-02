@@ -16,7 +16,10 @@ If you would like to contribute please feel free to email me or make the request
 ## Requirements:
 Requirements so far:
 
-Windows Machine | PowerShell 4.0 | MySql "Community" 5.5.32 | MySql  Net Connector 6.9.6
+*Windows Machine 
+*PowerShell 4.0
+*MySql "Community" 5.5.32
+*MySql  Net Connector 6.9.6
 
 ## More DC-Ess/EchoSign Dev related info can be found here: 
 ## https://www.evernote.com/l/AgU23YnN4rtJCJRWir6DebRuzq-sNU-qKbc
