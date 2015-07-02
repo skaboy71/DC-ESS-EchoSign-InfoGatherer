@@ -7,7 +7,7 @@ Currently this requires a windows server or workstation running PowerShell 4.0 a
 
 I started this project because I wanted to give my customers a good way to collect all the ESS related data so they could run their own reports.
 
-Eventually I will probably add some BIRT report files to this repo so folks can use those for "common" reports, and get some ideas about other reports they might like to create.  I'm trying to make this as easy on myself as possible and I am fairly familiar with PowerShell which also has easy ways of consuming REST data so for me this was my "way to go"
+Eventually I will probably add some [BIRT](http://www.eclipse.org/birt/) report files to this repo so folks can use those for "common" reports, and get some ideas about other reports they might like to create.  I'm trying to make this as easy on myself as possible and I am fairly familiar with PowerShell which also has easy ways of consuming REST data so for me this was my "way to go"
 
 I just started working on this a few weeks ago in my "spare" time so the going is slow.
 
