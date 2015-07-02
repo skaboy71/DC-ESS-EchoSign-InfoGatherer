@@ -36,7 +36,7 @@ At some point I will update this to use the oAuth token process but integration 
 
   * This is a script that when started goes into an "endless loop" and watches the "tmp_agreements" table fo new inserts to process via the "getAgreementInfo" function in the Resource.ps1 file to gather and update the database with all the info available in the "[getAgreementInfo](https://secure.echosign.com/public/docs/restapi/v3#!/agreements/_0_1)" REST call. When it finds new non-processed records it will process them up tp 200 at a time.  It will update the agreements, events, and recipients tables for each set of data it retrieves for each agreement ID/Docunment Key it finds in the tmp_agreements table.
 
-2. getUsers.ps1
+2. GetUsers.ps1
  
   * This script will get all the users in your account and save them to the users table. After it gets the data in the rest call it also exprts all the data to a .csv file it creates in a "/users" subfolder in the directory where the script is being run.
 
