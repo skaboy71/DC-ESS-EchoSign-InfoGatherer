@@ -22,6 +22,6 @@ Requirements so far:
 * MySql  Net Connector 6.9.6
 
 ## More DC-Ess/EchoSign Dev related info can be found here: 
-## https://www.evernote.com/l/AgU23YnN4rtJCJRWir6DebRuzq-sNU-qKbc
+https://www.evernote.com/l/AgU23YnN4rtJCJRWir6DebRuzq-sNU-qKbc
 
 
