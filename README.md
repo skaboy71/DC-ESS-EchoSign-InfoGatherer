@@ -20,7 +20,6 @@ Requirements so far:
 * PowerShell 4.0
 * MySql "Community" 5.5.32
 * MySql  Net Connector 6.9.6
-* 
 
 ### Main Scripts
 You need to have 2 main scripts before any of the others will work.
@@ -34,7 +33,7 @@ At some point I will update this to use the oAuth token process but integration 
 #### Additional Scripts
 
 * changeWatch.ps1
-** This is a script 
+*  This is a script 
 
 ###### More DC-Ess/EchoSign Dev related info can be found here: 
 https://www.evernote.com/l/AgU23YnN4rtJCJRWir6DebRuzq-sNU-qKbc
