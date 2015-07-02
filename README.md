@@ -47,6 +47,9 @@ At some point I will update this to use the oAuth token process but integration 
 4. RunChangeWatchers.bat and RunChangeWatchers_visible.bat
   * These are just a way to copy and start the "changeWatcher" scripts. I typically have about 5 running at once but you can adjust as you need and start more or fewer depending on your server configuration and your load/volumne of agreements that need to be processed. In my experience with one script running the collection of the agreements IDs for a very heavy user, you can process about 20K agreements for their "status" data in about 80-90 mins.  I have run through this many times in testing with a single user for which I had to collect all ESS data for from over a 2 year span.
 
+5. GetHistAgEventsFor1.ps1 (example)
+  * This is an example of how to call the getHistoryFor1User function to gather the history of all agreements. Basically this function will go through all the history via the [search](https://secure.echosign.com/public/docs/restapi/v3#!/search/) REST function and gather all the agrement IDs for a single user one week at a time starting at the "start date" passed to the function and ending with today's date.  Depending on how far back you start and how much data there is there to process, this can take a while.  I was planning on running some multiple of these to help process many users at once, but I have not started figuring out how to manage that yet. 
+
 
 
 ###### More DC-Ess/EchoSign Dev related info can be found here: 
