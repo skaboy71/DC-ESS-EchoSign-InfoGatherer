@@ -34,7 +34,9 @@ At some point I will update this to use the oAuth token process but integration 
 
 * changeWatch.ps1
 
-  * This is a script that when started goes into an "endless loop and watches the "tmp_agreements" table fo new inserts to process via the "getAgreementInfo" function in the Resource.ps1 file to gather and update the database with all the info available in the "getAgreementInfo" REST call.  
+  * This is a script that when started goes into an "endless loop" and watches the "tmp_agreements" table fo new inserts to process via the "getAgreementInfo" function in the Resource.ps1 file to gather and update the database with all the info available in the "[getAgreementInfo](https://secure.echosign.com/public/docs/restapi/v3#!/agreements/_0_1)" REST call. When it finds new non-processed records it will process them up tp 200 at a time.
+
+* 
 
 ###### More DC-Ess/EchoSign Dev related info can be found here: 
 https://www.evernote.com/l/AgU23YnN4rtJCJRWir6DebRuzq-sNU-qKbc
