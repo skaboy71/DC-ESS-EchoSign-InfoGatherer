@@ -1,4 +1,4 @@
--- Server version:               5.5.32 - MySQL Community Server (GPL)
+
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET NAMES utf8mb4 */;
@@ -38,7 +38,7 @@ CREATE TABLE IF NOT EXISTS `agreements` (
 -- Dumping structure for table dc_ess_data.events
 DROP TABLE IF EXISTS `events`;
 CREATE TABLE IF NOT EXISTS `events` (
-  `tid` varchar(100) NOT NULL,
+  `tid` varchar(100) NOT NULL DEFAULT '',
   `AgId` varchar(100) DEFAULT '',
   `AgName` varchar(500) DEFAULT NULL,
   `AgType` varchar(50) DEFAULT NULL,
@@ -83,27 +83,6 @@ CREATE TABLE IF NOT EXISTS `logging` (
 -- Data exporting was unselected.
 
 
--- Dumping structure for view dc_ess_data.non_terminal_ags
-DROP VIEW IF EXISTS `non_terminal_ags`;
--- Creating temporary table to overcome VIEW dependency errors
-CREATE TABLE `non_terminal_ags` (
-	`AgId` VARCHAR(100) NOT NULL COLLATE 'utf8_general_ci',
-	`trxId` VARCHAR(60) NULL COLLATE 'utf8_general_ci',
-	`sender` VARCHAR(255) NULL COLLATE 'utf8_general_ci',
-	`AgName` VARCHAR(500) NULL COLLATE 'utf8_general_ci',
-	`AgCreated` VARCHAR(60) NULL COLLATE 'utf8_general_ci',
-	`AgStatus` VARCHAR(100) NULL COLLATE 'utf8_general_ci',
-	`PartCount` VARCHAR(3) NULL COLLATE 'utf8_general_ci',
-	`LastEv` VARCHAR(60) NULL COLLATE 'utf8_general_ci',
-	`isMegasign` VARCHAR(4) NULL COLLATE 'utf8_general_ci',
-	`parentWidId` VARCHAR(100) NULL COLLATE 'utf8_general_ci',
-	`isWidgetChild` VARCHAR(4) NULL COLLATE 'utf8_general_ci',
-	`hasDelegates` VARCHAR(4) NULL COLLATE 'utf8_general_ci',
-	`lVerId` VARCHAR(100) NULL COLLATE 'utf8_general_ci',
-	`nextInfo` TINYTEXT NULL COLLATE 'utf8_general_ci'
-) ENGINE=MyISAM;
-
-
 -- Dumping structure for table dc_ess_data.participants
 DROP TABLE IF EXISTS `participants`;
 CREATE TABLE IF NOT EXISTS `participants` (
@@ -120,47 +99,6 @@ CREATE TABLE IF NOT EXISTS `participants` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- Data exporting was unselected.
-
-
--- Dumping structure for view dc_ess_data.processedagreements
-DROP VIEW IF EXISTS `processedagreements`;
--- Creating temporary table to overcome VIEW dependency errors
-CREATE TABLE `processedagreements` (
-	`AgId` VARCHAR(100) NOT NULL COLLATE 'utf8_general_ci',
-	`trxId` VARCHAR(60) NULL COLLATE 'utf8_general_ci',
-	`sender` VARCHAR(255) NULL COLLATE 'utf8_general_ci',
-	`AgName` VARCHAR(500) NULL COLLATE 'utf8_general_ci',
-	`AgCreated` VARCHAR(60) NULL COLLATE 'utf8_general_ci',
-	`AgStatus` VARCHAR(100) NULL COLLATE 'utf8_general_ci',
-	`PartCount` VARCHAR(3) NULL COLLATE 'utf8_general_ci',
-	`LastEv` VARCHAR(60) NULL COLLATE 'utf8_general_ci',
-	`isMegasign` VARCHAR(4) NULL COLLATE 'utf8_general_ci',
-	`parentWidId` VARCHAR(100) NULL COLLATE 'utf8_general_ci',
-	`isWidgetChild` VARCHAR(4) NULL COLLATE 'utf8_general_ci',
-	`hasDelegates` VARCHAR(4) NULL COLLATE 'utf8_general_ci',
-	`lVerId` VARCHAR(100) NULL COLLATE 'utf8_general_ci',
-	`nextInfo` TINYTEXT NULL COLLATE 'utf8_general_ci'
-) ENGINE=MyISAM;
-
-
--- Dumping structure for view dc_ess_data.signed agreements
-DROP VIEW IF EXISTS `signed agreements`;
--- Creating temporary table to overcome VIEW dependency errors
-CREATE TABLE `signed agreements` (
-	`AgId` VARCHAR(100) NOT NULL COLLATE 'utf8_general_ci',
-	`sender` VARCHAR(255) NULL COLLATE 'utf8_general_ci',
-	`AgName` VARCHAR(500) NULL COLLATE 'utf8_general_ci',
-	`AgCreated` VARCHAR(60) NULL COLLATE 'utf8_general_ci',
-	`AgStatus` VARCHAR(100) NULL COLLATE 'utf8_general_ci',
-	`PartCount` VARCHAR(3) NULL COLLATE 'utf8_general_ci',
-	`LastEv` VARCHAR(60) NULL COLLATE 'utf8_general_ci',
-	`isMegasign` VARCHAR(4) NULL COLLATE 'utf8_general_ci',
-	`parentWidId` VARCHAR(100) NULL COLLATE 'utf8_general_ci',
-	`isWidgetChild` VARCHAR(4) NULL COLLATE 'utf8_general_ci',
-	`hasDelegates` VARCHAR(4) NULL COLLATE 'utf8_general_ci',
-	`lVerId` VARCHAR(100) NULL COLLATE 'utf8_general_ci',
-	`nextInfo` TINYTEXT NULL COLLATE 'utf8_general_ci'
-) ENGINE=MyISAM;
 
 
 -- Dumping structure for table dc_ess_data.status_values
@@ -187,28 +125,6 @@ CREATE TABLE IF NOT EXISTS `tmp_agreements` (
 -- Data exporting was unselected.
 
 
--- Dumping structure for view dc_ess_data.tmp_widgets
-DROP VIEW IF EXISTS `tmp_widgets`;
--- Creating temporary table to overcome VIEW dependency errors
-CREATE TABLE `tmp_widgets` (
-	`AgId` VARCHAR(100) NOT NULL COLLATE 'utf8_general_ci',
-	`trxId` VARCHAR(60) NULL COLLATE 'utf8_general_ci',
-	`sender` VARCHAR(255) NULL COLLATE 'utf8_general_ci',
-	`AgName` VARCHAR(500) NULL COLLATE 'utf8_general_ci',
-	`AgCreated` VARCHAR(60) NULL COLLATE 'utf8_general_ci',
-	`AgStatus` VARCHAR(100) NULL COLLATE 'utf8_general_ci',
-	`AgType` VARCHAR(255) NULL COLLATE 'utf8_general_ci',
-	`PartCount` VARCHAR(3) NULL COLLATE 'utf8_general_ci',
-	`LastEv` VARCHAR(60) NULL COLLATE 'utf8_general_ci',
-	`isMegasign` VARCHAR(4) NULL COLLATE 'utf8_general_ci',
-	`parentWidId` VARCHAR(100) NULL COLLATE 'utf8_general_ci',
-	`isWidgetChild` VARCHAR(4) NULL COLLATE 'utf8_general_ci',
-	`hasDelegates` VARCHAR(4) NULL COLLATE 'utf8_general_ci',
-	`lVerId` VARCHAR(100) NULL COLLATE 'utf8_general_ci',
-	`nextInfo` TINYTEXT NULL COLLATE 'utf8_general_ci'
-) ENGINE=MyISAM;
-
-
 -- Dumping structure for table dc_ess_data.users
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE IF NOT EXISTS `users` (
@@ -231,103 +147,180 @@ CREATE TABLE IF NOT EXISTS `users` (
   `title` varchar(255) DEFAULT NULL,
   `startDate` varchar(60) DEFAULT NULL,
   `lastUpd` varchar(60) DEFAULT NULL,
+  `rank` varchar(50) DEFAULT '0',
   PRIMARY KEY (`email`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- Data exporting was unselected.
 
 
+-- Dumping structure for view dc_ess_data.vw_non_terminal_ags
+DROP VIEW IF EXISTS `vw_non_terminal_ags`;
+-- Creating temporary table to overcome VIEW dependency errors
+CREATE TABLE `vw_non_terminal_ags` (
+	`AgId` VARCHAR(100) NOT NULL COLLATE 'utf8_general_ci',
+	`trxId` VARCHAR(60) NULL COLLATE 'utf8_general_ci',
+	`sender` VARCHAR(255) NULL COLLATE 'utf8_general_ci',
+	`AgName` VARCHAR(500) NULL COLLATE 'utf8_general_ci',
+	`AgCreated` VARCHAR(60) NULL COLLATE 'utf8_general_ci',
+	`AgStatus` VARCHAR(100) NULL COLLATE 'utf8_general_ci',
+	`PartCount` VARCHAR(3) NULL COLLATE 'utf8_general_ci',
+	`LastEv` VARCHAR(60) NULL COLLATE 'utf8_general_ci',
+	`isMegasign` VARCHAR(4) NULL COLLATE 'utf8_general_ci',
+	`parentWidId` VARCHAR(100) NULL COLLATE 'utf8_general_ci',
+	`isWidgetChild` VARCHAR(4) NULL COLLATE 'utf8_general_ci',
+	`hasDelegates` VARCHAR(4) NULL COLLATE 'utf8_general_ci',
+	`lVerId` VARCHAR(100) NULL COLLATE 'utf8_general_ci',
+	`nextInfo` TINYTEXT NULL COLLATE 'utf8_general_ci'
+) ENGINE=MyISAM;
+
+
+-- Dumping structure for view dc_ess_data.vw_notxid
+DROP VIEW IF EXISTS `vw_notxid`;
+-- Creating temporary table to overcome VIEW dependency errors
+CREATE TABLE `vw_notxid` (
+	`AgId` VARCHAR(100) NOT NULL COLLATE 'utf8_general_ci',
+	`trxId` VARCHAR(60) NULL COLLATE 'utf8_general_ci',
+	`sender` VARCHAR(255) NULL COLLATE 'utf8_general_ci',
+	`AgName` VARCHAR(500) NULL COLLATE 'utf8_general_ci',
+	`AgCreated` VARCHAR(60) NULL COLLATE 'utf8_general_ci',
+	`AgStatus` VARCHAR(100) NULL COLLATE 'utf8_general_ci',
+	`AgType` VARCHAR(255) NULL COLLATE 'utf8_general_ci',
+	`PartCount` VARCHAR(3) NULL COLLATE 'utf8_general_ci',
+	`LastEv` VARCHAR(60) NULL COLLATE 'utf8_general_ci',
+	`isMegasign` VARCHAR(4) NULL COLLATE 'utf8_general_ci',
+	`parentWidId` VARCHAR(100) NULL COLLATE 'utf8_general_ci',
+	`isWidgetChild` VARCHAR(4) NULL COLLATE 'utf8_general_ci',
+	`hasDelegates` VARCHAR(4) NULL COLLATE 'utf8_general_ci',
+	`lVerId` VARCHAR(100) NULL COLLATE 'utf8_general_ci',
+	`nextInfo` TINYTEXT NULL COLLATE 'utf8_general_ci'
+) ENGINE=MyISAM;
+
+
+-- Dumping structure for view dc_ess_data.vw_processedagreements
+DROP VIEW IF EXISTS `vw_processedagreements`;
+-- Creating temporary table to overcome VIEW dependency errors
+CREATE TABLE `vw_processedagreements` (
+	`AgId` VARCHAR(100) NOT NULL COLLATE 'utf8_general_ci',
+	`trxId` VARCHAR(60) NULL COLLATE 'utf8_general_ci',
+	`sender` VARCHAR(255) NULL COLLATE 'utf8_general_ci',
+	`AgName` VARCHAR(500) NULL COLLATE 'utf8_general_ci',
+	`AgCreated` VARCHAR(60) NULL COLLATE 'utf8_general_ci',
+	`AgStatus` VARCHAR(100) NULL COLLATE 'utf8_general_ci',
+	`PartCount` VARCHAR(3) NULL COLLATE 'utf8_general_ci',
+	`LastEv` VARCHAR(60) NULL COLLATE 'utf8_general_ci',
+	`isMegasign` VARCHAR(4) NULL COLLATE 'utf8_general_ci',
+	`parentWidId` VARCHAR(100) NULL COLLATE 'utf8_general_ci',
+	`isWidgetChild` VARCHAR(4) NULL COLLATE 'utf8_general_ci',
+	`hasDelegates` VARCHAR(4) NULL COLLATE 'utf8_general_ci',
+	`lVerId` VARCHAR(100) NULL COLLATE 'utf8_general_ci',
+	`nextInfo` TINYTEXT NULL COLLATE 'utf8_general_ci'
+) ENGINE=MyISAM;
+
+
+-- Dumping structure for view dc_ess_data.vw_signed agreements
+DROP VIEW IF EXISTS `vw_signed agreements`;
+-- Creating temporary table to overcome VIEW dependency errors
+CREATE TABLE `vw_signed agreements` (
+	`AgId` VARCHAR(100) NOT NULL COLLATE 'utf8_general_ci',
+	`sender` VARCHAR(255) NULL COLLATE 'utf8_general_ci',
+	`AgName` VARCHAR(500) NULL COLLATE 'utf8_general_ci',
+	`AgCreated` VARCHAR(60) NULL COLLATE 'utf8_general_ci',
+	`AgStatus` VARCHAR(100) NULL COLLATE 'utf8_general_ci',
+	`PartCount` VARCHAR(3) NULL COLLATE 'utf8_general_ci',
+	`LastEv` VARCHAR(60) NULL COLLATE 'utf8_general_ci',
+	`isMegasign` VARCHAR(4) NULL COLLATE 'utf8_general_ci',
+	`parentWidId` VARCHAR(100) NULL COLLATE 'utf8_general_ci',
+	`isWidgetChild` VARCHAR(4) NULL COLLATE 'utf8_general_ci',
+	`hasDelegates` VARCHAR(4) NULL COLLATE 'utf8_general_ci',
+	`lVerId` VARCHAR(100) NULL COLLATE 'utf8_general_ci',
+	`nextInfo` TINYTEXT NULL COLLATE 'utf8_general_ci'
+) ENGINE=MyISAM;
+
+
+-- Dumping structure for view dc_ess_data.vw_tmp_widgets
+DROP VIEW IF EXISTS `vw_tmp_widgets`;
+-- Creating temporary table to overcome VIEW dependency errors
+CREATE TABLE `vw_tmp_widgets` (
+	`AgId` VARCHAR(100) NOT NULL COLLATE 'utf8_general_ci',
+	`trxId` VARCHAR(60) NULL COLLATE 'utf8_general_ci',
+	`sender` VARCHAR(255) NULL COLLATE 'utf8_general_ci',
+	`AgName` VARCHAR(500) NULL COLLATE 'utf8_general_ci',
+	`AgCreated` VARCHAR(60) NULL COLLATE 'utf8_general_ci',
+	`AgStatus` VARCHAR(100) NULL COLLATE 'utf8_general_ci',
+	`AgType` VARCHAR(255) NULL COLLATE 'utf8_general_ci',
+	`PartCount` VARCHAR(3) NULL COLLATE 'utf8_general_ci',
+	`LastEv` VARCHAR(60) NULL COLLATE 'utf8_general_ci',
+	`isMegasign` VARCHAR(4) NULL COLLATE 'utf8_general_ci',
+	`parentWidId` VARCHAR(100) NULL COLLATE 'utf8_general_ci',
+	`isWidgetChild` VARCHAR(4) NULL COLLATE 'utf8_general_ci',
+	`hasDelegates` VARCHAR(4) NULL COLLATE 'utf8_general_ci',
+	`lVerId` VARCHAR(100) NULL COLLATE 'utf8_general_ci',
+	`nextInfo` TINYTEXT NULL COLLATE 'utf8_general_ci'
+) ENGINE=MyISAM;
+
+
 -- Dumping structure for trigger dc_ess_data.tid44
 DROP TRIGGER IF EXISTS `tid44`;
-SET @OLDTMP_SQL_MODE=@@SQL_MODE, SQL_MODE='';
-DELIMITER //
-CREATE TRIGGER `tid44` BEFORE INSERT ON `logging` FOR EACH ROW SET new.tid = uuid()//
-DELIMITER ;
-SET SQL_MODE=@OLDTMP_SQL_MODE;
-
+/* SQL Error (1018): Can't read dir of './dc_ess_data/' (errno: 13 - Permission denied) */
 
 -- Dumping structure for trigger dc_ess_data.tuuid2
 DROP TRIGGER IF EXISTS `tuuid2`;
-SET @OLDTMP_SQL_MODE=@@SQL_MODE, SQL_MODE='';
-DELIMITER //
-CREATE TRIGGER `tuuid2` BEFORE INSERT ON `events` FOR EACH ROW SET new.tid = uuid()//
-DELIMITER ;
-SET SQL_MODE=@OLDTMP_SQL_MODE;
-
+/* SQL Error (1018): Can't read dir of './dc_ess_data/' (errno: 13 - Permission denied) */
 
 -- Dumping structure for trigger dc_ess_data.tuuidd
 DROP TRIGGER IF EXISTS `tuuidd`;
-SET @OLDTMP_SQL_MODE=@@SQL_MODE, SQL_MODE='';
-DELIMITER //
-CREATE TRIGGER `tuuidd` BEFORE INSERT ON `formdata` FOR EACH ROW SET new.tid = uuid()//
-DELIMITER ;
-SET SQL_MODE=@OLDTMP_SQL_MODE;
-
+/* SQL Error (1018): Can't read dir of './dc_ess_data/' (errno: 13 - Permission denied) */
 
 -- Dumping structure for trigger dc_ess_data.upAg3
 DROP TRIGGER IF EXISTS `upAg3`;
-SET @OLDTMP_SQL_MODE=@@SQL_MODE, SQL_MODE='';
-DELIMITER //
-CREATE TRIGGER `upAg3` AFTER INSERT ON `events` FOR EACH ROW INSERT IGNORE INTO agreements
-	Set AgId = NEW.AgId, AgName = NEW.AgName//
-DELIMITER ;
-SET SQL_MODE=@OLDTMP_SQL_MODE;
-
+/* SQL Error (1018): Can't read dir of './dc_ess_data/' (errno: 13 - Permission denied) */
 
 -- Dumping structure for trigger dc_ess_data.UpDateTemp
 DROP TRIGGER IF EXISTS `UpDateTemp`;
-SET @OLDTMP_SQL_MODE=@@SQL_MODE, SQL_MODE='STRICT_TRANS_TABLES,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION';
-DELIMITER //
-CREATE TRIGGER `UpDateTemp` AFTER INSERT ON `agreements` FOR EACH ROW INSERT INTO tmp_agreements
-	set tmp_agreements.AgId = NEW.AgId//
-DELIMITER ;
-SET SQL_MODE=@OLDTMP_SQL_MODE;
-
+/* SQL Error (1018): Can't read dir of './dc_ess_data/' (errno: 13 - Permission denied) */
 
 -- Dumping structure for trigger dc_ess_data.uuid
 DROP TRIGGER IF EXISTS `uuid`;
-SET @OLDTMP_SQL_MODE=@@SQL_MODE, SQL_MODE='STRICT_TRANS_TABLES,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION';
-DELIMITER //
-CREATE TRIGGER `uuid` BEFORE INSERT ON `tmp_agreements` FOR EACH ROW SET new.uuid = uuid()//
-DELIMITER ;
-SET SQL_MODE=@OLDTMP_SQL_MODE;
-
+/* SQL Error (1018): Can't read dir of './dc_ess_data/' (errno: 13 - Permission denied) */
 
 -- Dumping structure for trigger dc_ess_data.uuidPart
 DROP TRIGGER IF EXISTS `uuidPart`;
-SET @OLDTMP_SQL_MODE=@@SQL_MODE, SQL_MODE='STRICT_TRANS_TABLES,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION';
-DELIMITER //
-CREATE TRIGGER `uuidPart` BEFORE INSERT ON `participants` FOR EACH ROW SET new.tId = uuid()//
-DELIMITER ;
-SET SQL_MODE=@OLDTMP_SQL_MODE;
+/* SQL Error (1018): Can't read dir of './dc_ess_data/' (errno: 13 - Permission denied) */
 
-
--- Dumping structure for view dc_ess_data.non_terminal_ags
-DROP VIEW IF EXISTS `non_terminal_ags`;
+-- Dumping structure for view dc_ess_data.vw_non_terminal_ags
+DROP VIEW IF EXISTS `vw_non_terminal_ags`;
 -- Removing temporary table and create final VIEW structure
-DROP TABLE IF EXISTS `non_terminal_ags`;
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`%` SQL SECURITY DEFINER VIEW `non_terminal_ags` AS select `agreements`.`AgId` AS `AgId`,`agreements`.`trxId` AS `trxId`,`agreements`.`sender` AS `sender`,`agreements`.`AgName` AS `AgName`,`agreements`.`AgCreated` AS `AgCreated`,`agreements`.`AgStatus` AS `AgStatus`,`agreements`.`PartCount` AS `PartCount`,`agreements`.`LastEv` AS `LastEv`,`agreements`.`isMegasign` AS `isMegasign`,`agreements`.`parentWidId` AS `parentWidId`,`agreements`.`isWidgetChild` AS `isWidgetChild`,`agreements`.`hasDelegates` AS `hasDelegates`,`agreements`.`lVerId` AS `lVerId`,`agreements`.`nextInfo` AS `nextInfo` from `agreements` where `agreements`.`AgStatus` in (select `status_values`.`stNam` from `status_values` where (`status_values`.`isTerm` = '0'));
+DROP TABLE IF EXISTS `vw_non_terminal_ags`;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`%` SQL SECURITY DEFINER VIEW `vw_non_terminal_ags` AS select `agreements`.`AgId` AS `AgId`,`agreements`.`trxId` AS `trxId`,`agreements`.`sender` AS `sender`,`agreements`.`AgName` AS `AgName`,`agreements`.`AgCreated` AS `AgCreated`,`agreements`.`AgStatus` AS `AgStatus`,`agreements`.`PartCount` AS `PartCount`,`agreements`.`LastEv` AS `LastEv`,`agreements`.`isMegasign` AS `isMegasign`,`agreements`.`parentWidId` AS `parentWidId`,`agreements`.`isWidgetChild` AS `isWidgetChild`,`agreements`.`hasDelegates` AS `hasDelegates`,`agreements`.`lVerId` AS `lVerId`,`agreements`.`nextInfo` AS `nextInfo` from `agreements` where `agreements`.`AgStatus` in (select `status_values`.`stNam` from `status_values` where (`status_values`.`isTerm` = '0'));
 
 
--- Dumping structure for view dc_ess_data.processedagreements
-DROP VIEW IF EXISTS `processedagreements`;
+-- Dumping structure for view dc_ess_data.vw_notxid
+DROP VIEW IF EXISTS `vw_notxid`;
 -- Removing temporary table and create final VIEW structure
-DROP TABLE IF EXISTS `processedagreements`;
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`%` SQL SECURITY DEFINER VIEW `processedagreements` AS select `agreements`.`AgId` AS `AgId`,`agreements`.`trxId` AS `trxId`,`agreements`.`sender` AS `sender`,`agreements`.`AgName` AS `AgName`,`agreements`.`AgCreated` AS `AgCreated`,`agreements`.`AgStatus` AS `AgStatus`,`agreements`.`PartCount` AS `PartCount`,`agreements`.`LastEv` AS `LastEv`,`agreements`.`isMegasign` AS `isMegasign`,`agreements`.`parentWidId` AS `parentWidId`,`agreements`.`isWidgetChild` AS `isWidgetChild`,`agreements`.`hasDelegates` AS `hasDelegates`,`agreements`.`lVerId` AS `lVerId`,`agreements`.`nextInfo` AS `nextInfo` from `agreements` where ((`agreements`.`AgStatus` is not null) and (`agreements`.`AgStatus` <> ''));
+DROP TABLE IF EXISTS `vw_notxid`;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`%` SQL SECURITY DEFINER VIEW `vw_notxid` AS select `agreements`.`AgId` AS `AgId`,`agreements`.`trxId` AS `trxId`,`agreements`.`sender` AS `sender`,`agreements`.`AgName` AS `AgName`,`agreements`.`AgCreated` AS `AgCreated`,`agreements`.`AgStatus` AS `AgStatus`,`agreements`.`AgType` AS `AgType`,`agreements`.`PartCount` AS `PartCount`,`agreements`.`LastEv` AS `LastEv`,`agreements`.`isMegasign` AS `isMegasign`,`agreements`.`parentWidId` AS `parentWidId`,`agreements`.`isWidgetChild` AS `isWidgetChild`,`agreements`.`hasDelegates` AS `hasDelegates`,`agreements`.`lVerId` AS `lVerId`,`agreements`.`nextInfo` AS `nextInfo` from `agreements` where isnull(`agreements`.`trxId`);
 
 
--- Dumping structure for view dc_ess_data.signed agreements
-DROP VIEW IF EXISTS `signed agreements`;
+-- Dumping structure for view dc_ess_data.vw_processedagreements
+DROP VIEW IF EXISTS `vw_processedagreements`;
 -- Removing temporary table and create final VIEW structure
-DROP TABLE IF EXISTS `signed agreements`;
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`%` SQL SECURITY DEFINER VIEW `signed agreements` AS select `agreements`.`AgId` AS `AgId`,`agreements`.`sender` AS `sender`,`agreements`.`AgName` AS `AgName`,`agreements`.`AgCreated` AS `AgCreated`,`agreements`.`AgStatus` AS `AgStatus`,`agreements`.`PartCount` AS `PartCount`,`agreements`.`LastEv` AS `LastEv`,`agreements`.`isMegasign` AS `isMegasign`,`agreements`.`parentWidId` AS `parentWidId`,`agreements`.`isWidgetChild` AS `isWidgetChild`,`agreements`.`hasDelegates` AS `hasDelegates`,`agreements`.`lVerId` AS `lVerId`,`agreements`.`nextInfo` AS `nextInfo` from `agreements` where (`agreements`.`AgStatus` = 'SIGNED');
+DROP TABLE IF EXISTS `vw_processedagreements`;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`%` SQL SECURITY DEFINER VIEW `vw_processedagreements` AS select `agreements`.`AgId` AS `AgId`,`agreements`.`trxId` AS `trxId`,`agreements`.`sender` AS `sender`,`agreements`.`AgName` AS `AgName`,`agreements`.`AgCreated` AS `AgCreated`,`agreements`.`AgStatus` AS `AgStatus`,`agreements`.`PartCount` AS `PartCount`,`agreements`.`LastEv` AS `LastEv`,`agreements`.`isMegasign` AS `isMegasign`,`agreements`.`parentWidId` AS `parentWidId`,`agreements`.`isWidgetChild` AS `isWidgetChild`,`agreements`.`hasDelegates` AS `hasDelegates`,`agreements`.`lVerId` AS `lVerId`,`agreements`.`nextInfo` AS `nextInfo` from `agreements` where ((`agreements`.`AgStatus` is not null) and (`agreements`.`AgStatus` <> ''));
 
 
--- Dumping structure for view dc_ess_data.tmp_widgets
-DROP VIEW IF EXISTS `tmp_widgets`;
+-- Dumping structure for view dc_ess_data.vw_signed agreements
+DROP VIEW IF EXISTS `vw_signed agreements`;
 -- Removing temporary table and create final VIEW structure
-DROP TABLE IF EXISTS `tmp_widgets`;
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`%` SQL SECURITY DEFINER VIEW `tmp_widgets` AS select `agreements`.`AgId` AS `AgId`,`agreements`.`trxId` AS `trxId`,`agreements`.`sender` AS `sender`,`agreements`.`AgName` AS `AgName`,`agreements`.`AgCreated` AS `AgCreated`,`agreements`.`AgStatus` AS `AgStatus`,`agreements`.`AgType` AS `AgType`,`agreements`.`PartCount` AS `PartCount`,`agreements`.`LastEv` AS `LastEv`,`agreements`.`isMegasign` AS `isMegasign`,`agreements`.`parentWidId` AS `parentWidId`,`agreements`.`isWidgetChild` AS `isWidgetChild`,`agreements`.`hasDelegates` AS `hasDelegates`,`agreements`.`lVerId` AS `lVerId`,`agreements`.`nextInfo` AS `nextInfo` from `agreements` where (`agreements`.`AgType` = 'widget');
+DROP TABLE IF EXISTS `vw_signed agreements`;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`%` SQL SECURITY DEFINER VIEW `vw_signed agreements` AS select `agreements`.`AgId` AS `AgId`,`agreements`.`sender` AS `sender`,`agreements`.`AgName` AS `AgName`,`agreements`.`AgCreated` AS `AgCreated`,`agreements`.`AgStatus` AS `AgStatus`,`agreements`.`PartCount` AS `PartCount`,`agreements`.`LastEv` AS `LastEv`,`agreements`.`isMegasign` AS `isMegasign`,`agreements`.`parentWidId` AS `parentWidId`,`agreements`.`isWidgetChild` AS `isWidgetChild`,`agreements`.`hasDelegates` AS `hasDelegates`,`agreements`.`lVerId` AS `lVerId`,`agreements`.`nextInfo` AS `nextInfo` from `agreements` where (`agreements`.`AgStatus` = 'SIGNED');
+
+
+-- Dumping structure for view dc_ess_data.vw_tmp_widgets
+DROP VIEW IF EXISTS `vw_tmp_widgets`;
+-- Removing temporary table and create final VIEW structure
+DROP TABLE IF EXISTS `vw_tmp_widgets`;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`%` SQL SECURITY DEFINER VIEW `vw_tmp_widgets` AS select `agreements`.`AgId` AS `AgId`,`agreements`.`trxId` AS `trxId`,`agreements`.`sender` AS `sender`,`agreements`.`AgName` AS `AgName`,`agreements`.`AgCreated` AS `AgCreated`,`agreements`.`AgStatus` AS `AgStatus`,`agreements`.`AgType` AS `AgType`,`agreements`.`PartCount` AS `PartCount`,`agreements`.`LastEv` AS `LastEv`,`agreements`.`isMegasign` AS `isMegasign`,`agreements`.`parentWidId` AS `parentWidId`,`agreements`.`isWidgetChild` AS `isWidgetChild`,`agreements`.`hasDelegates` AS `hasDelegates`,`agreements`.`lVerId` AS `lVerId`,`agreements`.`nextInfo` AS `nextInfo` from `agreements` where (`agreements`.`AgType` = 'widget');
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
