@@ -18,7 +18,7 @@ CREATE TABLE `agreements` (
   `sender` varchar(255) DEFAULT NULL,
   `AgName` varchar(500) DEFAULT NULL,
   `AgCreated` varchar(60) DEFAULT NULL,
-  `AgStatus` varchar(100) DEFAULT NULL,
+  `AgStatus` varchar(255) DEFAULT NULL,
   `AgType` varchar(255) DEFAULT NULL,
   `PartCount` varchar(3) DEFAULT NULL,
   `LastEv` varchar(60) DEFAULT NULL,
