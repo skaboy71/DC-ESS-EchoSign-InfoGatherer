@@ -28,7 +28,7 @@ CREATE TABLE `agreements` (
   `hasDelegates` varchar(4) DEFAULT NULL,
   `lVerId` varchar(100) DEFAULT NULL,
   `nextInfo` tinytext,
-  `isDeleted` varchar(4) DEFAULT NULL,
+  `isDeleted` varchar(4) DEFAULT '0',
   PRIMARY KEY (`AgId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 delimiter ;;
