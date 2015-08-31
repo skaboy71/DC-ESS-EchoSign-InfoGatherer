@@ -120,7 +120,7 @@ delimiter ;
 -- ----------------------------
 DROP TABLE IF EXISTS `status_values`;
 CREATE TABLE `status_values` (
-  `tId` int(11) NOT NULL AUTO_INCREMENT,
+  `tId` varchar(100) DEFAULT NULL,
   `stNam` varchar(500) DEFAULT NULL,
   `isTerm` char(1) DEFAULT '0',
   PRIMARY KEY (`tId`)
@@ -225,7 +225,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`%` SQL SECURITY DEFINER VIEW `vw_tmp_
 --  Records of `status_values`
 -- ----------------------------
 BEGIN;
-INSERT INTO `status_values` VALUES ('1', 'OUT_FOR_SIGNATURE', '0'), ('2', 'OUT_FOR_APPROVALW', '0'), ('3', 'AITING_FOR_REVIEW', '0'), ('4', 'SIGNED', '1'), ('5', 'APPROVED', '1'), ('6', 'ABORTED', '1'), ('7', 'DOCUMENT_LIBRARY', '1'), ('8', 'WIDGET', '1'), ('9', 'EXPIRED', '1'), ('10', 'ARCHIVED', '1'), ('11', 'PREFILL', '0'), ('12', 'AUTHORING', '0'), ('13', 'WAITING_FOR_FAXIN', '0'), ('14', 'WAITING_FOR_VERIFICATION', '0'), ('15', 'WIDGET_WAITING_FOR_VERIFICATION', '0'), ('16', 'WAITING_FOR_PAYMENT', '0'), ('17', 'OTHER', '1');
+INSERT INTO `status_values` (stNam,isTerm) VALUES ('OUT_FOR_SIGNATURE', '0'), ('OUT_FOR_APPROVALW', '0'), ('WAITING_FOR_REVIEW', '0'), ('SIGNED', '1'), ('APPROVED', '1'), ('ABORTED', '1'), ('DOCUMENT_LIBRARY', '1'), ('WIDGET', '1'), ('EXPIRED', '1'), ('ARCHIVED', '1'), ('PREFILL', '0'), ('AUTHORING', '0'), ('WAITING_FOR_FAXIN', '0'), ('WAITING_FOR_VERIFICATION', '0'), ('WIDGET_WAITING_FOR_VERIFICATION', '0'), ('WAITING_FOR_PAYMENT', '0'), ('OTHER', '1');
 COMMIT;
 
 
