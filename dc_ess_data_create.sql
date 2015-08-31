@@ -221,4 +221,12 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`%` SQL SECURITY DEFINER VIEW `vw_sign
 DROP VIEW IF EXISTS `vw_tmp_widgets`;
 CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`%` SQL SECURITY DEFINER VIEW `vw_tmp_widgets` AS select `agreements`.`AgId` AS `AgId`,`agreements`.`trxId` AS `trxId`,`agreements`.`sender` AS `sender`,`agreements`.`AgName` AS `AgName`,`agreements`.`AgCreated` AS `AgCreated`,`agreements`.`AgStatus` AS `AgStatus`,`agreements`.`AgType` AS `AgType`,`agreements`.`PartCount` AS `PartCount`,`agreements`.`LastEv` AS `LastEv`,`agreements`.`isMegasign` AS `isMegasign`,`agreements`.`parentWidId` AS `parentWidId`,`agreements`.`isWidgetChild` AS `isWidgetChild`,`agreements`.`hasDelegates` AS `hasDelegates`,`agreements`.`lVerId` AS `lVerId`,`agreements`.`nextInfo` AS `nextInfo`,`agreements`.`isDeleted` AS `isDeleted` from `agreements` where (`agreements`.`AgType` = 'widget');
 
+-- ----------------------------
+--  Records of `status_values`
+-- ----------------------------
+BEGIN;
+INSERT INTO `status_values` VALUES ('1', 'OUT_FOR_SIGNATURE', '0'), ('2', 'OUT_FOR_APPROVALW', '0'), ('3', 'AITING_FOR_REVIEW', '0'), ('4', 'SIGNED', '1'), ('5', 'APPROVED', '1'), ('6', 'ABORTED', '1'), ('7', 'DOCUMENT_LIBRARY', '1'), ('8', 'WIDGET', '1'), ('9', 'EXPIRED', '1'), ('10', 'ARCHIVED', '1'), ('11', 'PREFILL', '0'), ('12', 'AUTHORING', '0'), ('13', 'WAITING_FOR_FAXIN', '0'), ('14', 'WAITING_FOR_VERIFICATION', '0'), ('15', 'WIDGET_WAITING_FOR_VERIFICATION', '0'), ('16', 'WAITING_FOR_PAYMENT', '0'), ('17', 'OTHER', '1');
+COMMIT;
+
+
 SET FOREIGN_KEY_CHECKS = 1;
