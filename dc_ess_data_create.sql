@@ -2,6 +2,7 @@
 -- 09/30/15 20:13:47
 -- Model: New Model    Version: 1.0
 -- MySQL Workbench Forward Engineering
+-- This must be run as root @ localhost user
 
 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
