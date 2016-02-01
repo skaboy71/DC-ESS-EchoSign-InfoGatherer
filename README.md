@@ -53,6 +53,6 @@ At some point I will update this to use the oAuth token process but integration 
 
 
 ###### More DC-Ess/EchoSign Dev related info can be found here: 
-https://www.evernote.com/l/AgU23YnN4rtJCJRWir6DebRuzq-sNU-qKbc
+http://asmusz.duckdns.org/tikwiki/tiki-index.php?page=Developer+Resources
 
 
